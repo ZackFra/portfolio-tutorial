@@ -8,12 +8,10 @@ There are multiple different boilerplates for creating a web-based React app.
 In this tutorial, we will be using Create-React-App. The reason for this selection
 is that Create-React-App is the easiest to use and requires the least configuration.
 
-<aside>
-Three popular frameworks for creating React apps are,
+As an aside, three popular frameworks for creating React apps are:
 1. Create-React-App
 2. Gatsby
 3. Next.js
-</aside>
 
 In order to create an app with Create-React-App, we will use npx. npx is a tool 
 provided by the Node Package Manager to execute npm package binaries. With this
@@ -313,5 +311,25 @@ using either the fetch API or the axios package.
 
 More information on bootstrap and react-bootstrap can be found here,
 
-bootstrap: https://getbootstrap.com/
-react-bootstrap: https://react-bootstrap.github.io/
+bootstrap: https://getbootstrap.com/<br>
+react-bootstrap: https://react-bootstrap.github.io/<br>
+
+## Component Manager
+
+As mentioned previously, external components can modify each other and access each other's states. The easiest way to do this is to use a 
+component manager and register components that might need to be modified for later use and pass the manager down as a prop. A component
+manager will typically look something like this:
+
+```
+class ComponentManager {
+	components = {}
+	
+	register = (thisRef, alia) => this.components[alias] = thisRef
+	do = (callback) => callback(this.components)
+}
+
+export new ComponentManager();
+```
+
+With this, we can avoid using unnecessary refs, and can access components easily much like how we might access DOM nodes using
+document.querySelector or the dollar sign function in JQuery.
