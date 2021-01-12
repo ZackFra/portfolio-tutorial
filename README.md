@@ -314,7 +314,7 @@ More information on bootstrap and react-bootstrap can be found here,
 bootstrap: https://getbootstrap.com/<br>
 react-bootstrap: https://react-bootstrap.github.io/<br>
 
-## Component Manager
+### Component Manager
 
 As mentioned previously, external components can modify each other and access each other's states. The easiest way to do this is to use a 
 component manager and register components that might need to be modified for later use and pass the manager down as a prop. A component
